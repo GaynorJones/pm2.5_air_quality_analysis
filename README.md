@@ -1,10 +1,12 @@
-PM2.5 Air Quality Analysis (Indiana, 2025)
+# PM2.5 Air Quality Analysis (Indiana, 2025)
 
 Part of a growing portfolio in environmental data analysis using Python.
 
-Project Overview
+
+## Project Overview:
 
 This project analyses EPA air pollution data to explore air quality trends (PM2.5) in Indiana using Python.
+
 
 The workflow includes:
 
@@ -14,13 +16,15 @@ The workflow includes:
 
 •	Visualisation (bar plots for averages, line plots for detecting extreme values)
 
-Key Findings:
+
+## Key Findings:
 
 •	Average PM2.5 levels vary across monitoring sites
 
 •	Extreme pollution events can be identified using standard deviation thresholds
 
-Features
+
+## Features:
 
 Load and clean EPA air quality data
 
@@ -40,13 +44,15 @@ Highlight the sites/dates with the highest anomaly
 
 Exports results to JSON and CSV files
 
-Dataset
+
+## Dataset:
 
 The dataset contains EPA PM2.5 measurements for the state of Indiana in the year 2025
 
 Columns used: Date, PM2.5 (Daily Mean PM2.5 Concentration), Site ID
 
-Results & Insights
+
+## Results & Insights:
 
 •	One site (180890022) showed multiple extreme spikes 
 
@@ -56,7 +62,8 @@ Results & Insights
 
 •	Most sites exhibited relatively stable PM2.5 levels throughout the year
 
-Visualisations
+
+## Visualisations:
 
 Average PM2.5 by Site
 
@@ -70,7 +77,7 @@ Extreme PM2.5 anomaly, site 180890022
 
 ![Average PM2.5](plot_pm25_over_time.png)
 
-Technologies Used
+## Technologies Used
 
 Python
 
@@ -81,7 +88,8 @@ matplotlib
 
 Git & GitHub
 
-How to Run
+
+## How to Run
 
 Clone the repository
 
@@ -89,13 +97,15 @@ Open the notebook: air_quality_analysis.ipynb
 
 Run all cells
 
-Conclusions
+
+## Conclusions
 
 This analysis highlights that while overall PM2.5 levels across Indiana sites remain relatively stable, extreme pollution events do occur and are not evenly distributed.
 
 One site (180890022) showed a significant spike lasting several days, suggesting either local environmental factors or potential measurement anomalies. In contrast, most other sites did not experience such extreme events, indicating that high pollution levels are generally short-lived and location-specific.
 
 The presence of very high outliers (e.g. 143.7 µg/m³) demonstrates the importance of anomaly detection when analysing air quality data, as averages alone can mask these events.
+
 
 Further investigation could explore:
 
@@ -104,5 +114,6 @@ Further investigation could explore:
 •	External factors such as weather events or wildfires 
 
 •	Whether high-variance sites consistently show abnormal behaviour
+
 
 This project demonstrates how structured data analysis pipelines can be used to move from raw environmental data to meaningful insights and targeted investigation.
