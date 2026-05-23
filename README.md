@@ -1,119 +1,235 @@
-# PM2.5 Air Quality Analysis (Indiana, 2025)
+#PM2.5 Air Quality Analysis & Machine Learning Classification (Indiana, 2025)
 
-Part of a growing portfolio in environmental data analysis using Python.
+Part of a growing portfolio in environmental data analysis, scientific computing, and introductory machine learning using Python.
 
+##Project Overview
 
-## Project Overview:
+This project analyses EPA PM2.5 air pollution data from Indiana (2025) using Python, pandas, matplotlib, and scikit-learn.
 
-This project analyses EPA air pollution data to explore air quality trends (PM2.5) in Indiana using Python.
+The project began as a traditional environmental data analysis pipeline focused on:
 
+data cleaning
+statistical analysis
+anomaly detection
+visualisation
 
-The workflow includes:
+It was later expanded into a supervised machine learning classification system using logistic regression.
 
-•	Data cleaning and validation (pure Python and pandas)
+The workflow now includes:
 
-•	Statistical analysis (mean, standard deviation, extreme values)
+Data cleaning and validation
+Statistical analysis
+Visualisation
+Anomaly detection
+Feature extraction
+Train/test dataset splitting
+Logistic regression classification
+Confusion matrix evaluation
+Probability-based prediction analysis
 
-•	Visualisation (bar plots for averages, line plots for detecting extreme values)
+##Key Learning Goals
 
+This project was designed to explore:
 
-## Key Findings:
+environmental data analysis workflows
+statistical reasoning
+anomaly detection
+machine learning classification
+probabilistic prediction systems
+model evaluation techniques
 
-•	Average PM2.5 levels vary across monitoring sites
+It also serves as an introduction to:
 
-•	Extreme pollution events can be identified using standard deviation thresholds
+supervised learning
+classification pipelines
+ML workflow structure
+evaluation metrics
 
+##Features
 
-## Features:
+###Environmental Data Analysis
 
 Load and clean EPA air quality data
-
-Handle missing values
-
+Handle missing and invalid values
 Compute:
+    average PM2.5 levels
+    standard deviation
+    maximum and minimum values
+Detect extreme pollution anomalies
+Generate visualisations using matplotlib
+Export results to JSON and CSV
+Log pipeline operations and errors
 
-Average PM2.5 levels over multiple sites
+###Machine Learning Classification
 
-Maximum PM2.5 measurements
+##The project now includes a logistic regression classification pipeline that predicts whether PM2.5 levels are:
 
-Minimum PM2.5 measurements 
+Safe (0)
+Unsafe (1)
 
-Visualise air quality trends using matplotlib
+using a threshold-based classification system.
 
-Highlight the sites/dates with the highest anomaly
+####ML workflow includes:
 
-Exports results to JSON and CSV files
+feature extraction
+label generation
+NumPy array conversion
+matrix reshaping for ML compatibility
+train/test splitting
+logistic regression training
+probability prediction
+confusion matrix evaluation
+classification accuracy analysis
 
+##Dataset
 
-## Dataset:
+The dataset contains EPA PM2.5 measurements for monitoring sites across Indiana during 2025.
 
-The dataset contains EPA PM2.5 measurements for the state of Indiana in the year 2025
+####Columns used:
 
-Columns used: Date, PM2.5 (Daily Mean PM2.5 Concentration), Site ID
+Date
+Site ID
+Daily Mean PM2.5 Concentration
 
+##Statistical Analysis
 
-## Results & Insights:
+The project computes:
 
-•	One site (180890022) showed multiple extreme spikes 
+mean PM2.5 concentration
+sample standard deviation
+maximum and minimum measurements
+extreme anomalies using standard deviation thresholds
 
-•	Highest PM2.5 value observed: 143.7 µg/m³ 
+Extreme events are identified when PM2.5 values exceed statistically unusual ranges.
 
-•	Extreme events were rare and concentrated in a small number of sites
+##Machine Learning Classification
 
-•	Most sites exhibited relatively stable PM2.5 levels throughout the year
+###Classification Goal
 
+The ML component converts continuous PM2.5 values into categorical labels:
 
-## Visualisations:
+PM2.5 Value	Classification
+≤ 35 µg/m³	Safe
+> 35 µg/m³	Unsafe
 
-Average PM2.5 by Site
+The logistic regression model then learns the probability that a PM2.5 measurement belongs to the unsafe category.
 
-![Average PM2.5](plot_pm25_averages.png)
+##Model Evaluation
 
-Average PM2.5 (selected sites), including standard deviation
+The classification system is evaluated using:
 
-![Average PM2.5](plot_pm25_averages_with_std.png)
+accuracy score
+confusion matrix
+precision
+recall
+F1-score
 
-Extreme PM2.5 anomaly, site 180890022
+The project also visualises:
 
-![Average PM2.5](plot_pm25_over_time.png)
+classification outputs
+logistic probability curves
+decision boundary behaviour
 
-## Technologies Used
+##Key Findings
+
+###Environmental Analysis
+Average PM2.5 levels vary across monitoring sites
+Most sites remain relatively stable throughout the year
+Extreme pollution events are rare and concentrated at a small number of sites
+Site 180890022 showed several unusually high PM2.5 spikes
+
+###Highest observed PM2.5 value:
+
+143.7 µg/m³
+
+###Machine Learning Findings
+
+Logistic regression successfully separated safe vs unsafe pollution categories
+Most PM2.5 measurements fell within the safe category
+The classifier demonstrated strong performance on held-back test data
+Probability outputs provided insight into uncertainty near the classification threshold
+
+The project also demonstrated how classification differs fundamentally from regression:
+
+regression predicts numerical values
+classification predicts category membership probabilities
+
+##Visualisations
+
+The project generates:
+
+###Statistical Plots
+
+Average PM2.5 by site
+PM2.5 variability by site (with standard deviation)
+PM2.5 time series plots
+Extreme anomaly investigation plots
+
+###Machine Learning Plots
+
+Classification scatter plots
+Logistic regression probability curves
+Decision boundary visualisations
+
+##Technologies Used
 
 Python
-
 pandas
-Jupyter Notebook
-
+NumPy
 matplotlib
-
+scikit-learn
+Jupyter Notebook
 Git & GitHub
 
+##Project Structure
 
-## How to Run
+The pipeline follows a modular structure:
+
+load_data()
+clean_data()
+extract_features()
+generate_labels()
+split_data()
+train_model()
+evaluate_model()
+plot_results()
+save_outputs()
+
+This structure mirrors real-world machine learning workflow design.
+
+##How to Run
 
 Clone the repository
-
-Open the notebook: air_quality_analysis.ipynb
-
+Open the notebook:
+air_quality_analysis.ipynb
 Run all cells
 
+##Conclusions
 
-## Conclusions
+This project demonstrates the transition from traditional environmental data analysis into introductory machine learning workflows.
 
-This analysis highlights that while overall PM2.5 levels across Indiana sites remain relatively stable, extreme pollution events do occur and are not evenly distributed.
+The statistical analysis component highlights how air pollution varies across monitoring sites and how extreme events can be identified using anomaly detection techniques.
 
-One site (180890022) showed a significant spike lasting several days, suggesting either local environmental factors or potential measurement anomalies. In contrast, most other sites did not experience such extreme events, indicating that high pollution levels are generally short-lived and location-specific.
+The machine learning extension demonstrates how environmental measurements can be transformed into classification systems using supervised learning techniques such as logistic regression.
 
-The presence of very high outliers (e.g. 143.7 µg/m³) demonstrates the importance of anomaly detection when analysing air quality data, as averages alone can mask these events.
+The project also introduces key ML concepts including:
 
+train/test splitting
+probabilistic prediction
+decision boundaries
+confusion matrices
+classification evaluation
 
-Further investigation could explore:
+More broadly, the project demonstrates how structured data pipelines can evolve into complete end-to-end machine learning systems.
 
-•	Temporal patterns (seasonality or specific dates) 
+##Future Improvements
 
-•	External factors such as weather events or wildfires 
+Potential future extensions include:
 
-•	Whether high-variance sites consistently show abnormal behaviour
-
-
-This project demonstrates how structured data analysis pipelines can be used to move from raw environmental data to meaningful insights and targeted investigation.
+multi-feature pollution prediction
+weather and seasonal integration
+wind and atmospheric transport effects
+time-series forecasting
+multi-class air quality classification
+advanced ML models
+real-time environmental monitoring pipelines
