@@ -174,15 +174,27 @@ The project generates:
 ### Statistical Plots
 
 •	Average PM2.5 by site
+
+![Average PM2.5](plots/plot_pm25_averages.png)
+
 •	PM2.5 variability by site (with standard deviation)
-•	PM2.5 time series plots
-•	Extreme anomaly investigation plots
+
+![PM2.5 by site](plots/plot_pm25_averages_with_std.png)
+
+•	PM2.5 time series plots/Extreme anomaly investigation
+
+![PM2.5 over time](plots/plot_pm25_over_time.png)
 
 ### Machine Learning Plots
 
 •	Classification scatter plots
+
+![Classification plot](plots/logistic_regression_classification.png)
+
 •	Logistic regression probability curves
-•	Decision boundary visualisations
+
+![Unsafe probability](plots/unsafe_probability_vs_pm25.png)
+
 ________________________________________
 
 ## Technologies Used
